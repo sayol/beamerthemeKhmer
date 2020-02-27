@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{ស្វាគមន៍}{1}{0}{1}
+\beamer@sectionintoc {2}{លេខ និងអក្សរខ្មែរ}{2}{0}{2}
+\beamer@sectionintoc {3}{លាយបញ្ចូលគ្នា}{3}{0}{3}
