@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.5.22)  29 FEB 2020 18:31
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.5.22)  29 FEB 2020 22:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -538,7 +538,7 @@ Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
 (c:/texlive/2019/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
 \beamer@sbttoks=\toks30
 
-(c:/texlive/2019/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty
+(./beamerbaseauxtemplates.sty
 (c:/texlive/2019/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
 \bmb@box=\box48
 \bmb@colorbox=\box49
@@ -1168,12 +1168,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 31820 strings out of 492922
- 637956 string characters out of 6136751
- 728731 words of memory out of 5000000
- 35388 multiletter control sequences out of 15000+600000
- 539744 words of font info for 78 fonts, out of 8000000 for 9000
+ 31813 strings out of 492922
+ 637692 string characters out of 6136751
+ 729016 words of memory out of 5000000
+ 35383 multiletter control sequences out of 15000+600000
+ 539728 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 58i,19n,87p,790b,1566s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,19n,87p,790b,1548s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on example.pdf (14 pages).
