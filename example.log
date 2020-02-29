@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.5.22)  29 FEB 2020 18:18
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.5.22)  29 FEB 2020 18:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1155,11 +1155,11 @@ File: beamericononline.pdf Graphic file (type pdf)
 \tf@snm=\write8
 \openout8 = `example.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./example.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 72.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 73.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `example.out' has not changed.
 (rerunfilecheck)             Checksum: 442D16E7F8B6973FE394CFB9F8F07A66.
 
@@ -1168,11 +1168,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 31809 strings out of 492922
- 637558 string characters out of 6136751
- 728752 words of memory out of 5000000
- 35378 multiletter control sequences out of 15000+600000
- 539736 words of font info for 77 fonts, out of 8000000 for 9000
+ 31820 strings out of 492922
+ 637956 string characters out of 6136751
+ 728731 words of memory out of 5000000
+ 35388 multiletter control sequences out of 15000+600000
+ 539744 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,19n,87p,790b,1566s stack positions out of 5000i,500n,10000p,200000b,80000s
 
