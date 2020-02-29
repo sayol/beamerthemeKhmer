@@ -5,95 +5,39 @@
 \newif\ifbeamer@secheader
 \beamer@secheaderfalse
 %
-\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+\DeclareOptionBeamer{secheader}{\beamer@secheaderfalse}
 \ProcessOptionsBeamer
 %
-%TODO: Khmer (Cambodian)
-\RequirePackage[no-math]{fontspec}% no math font
-\setmainfont{Khmer OS System}% roman font
-\setsansfont{Khmer OS Muol Light}% sans serif font
-\setmonofont{Khmer OS Bokor}% typewriter font
-\XeTeXlinebreaklocale "khm"% line break rule
-\XeTeXlinebreakskip = 0pt plus 1pt minus 0.5pt% line break skip
-%TODO: Khmer number
-\def\khmer#1{\expandafter\@khmer\csname c@#1\endcsname}
-\def\@khmer#1{\expandafter\@@khmer\number#1\@nil}
-\def\@@khmer#1{%
-    \ifx#1\@nil% terminate when encounter @nil
-    \else%
-    \ifcase#1 ០\or ១\or ២\or ៣\or ៤\or ៥\or ៦\or ៧\or ៨\or ៩\fi%
-    \expandafter\@@khmer% recursively map the following characters
-    \fi}
-\def\khmernumeral#1{\@@khmer#1\@nil}
-%TODO: khmer alphabet
-\def\alpkh#1{\expandafter\@alpkh\csname c@#1\endcsname}
-\def\@alpkh#1{%
-    \ifcase#1% zero -> none
-    \or ក\or ខ\or គ\or ឃ\or ង%
-    \or ច\or ឆ\or ជ\or ឈ\or ញ%
-    \or ដ\or ឋ\or ឌ\or ឍ\or ណ%
-    \or ត\or ថ\or ទ\or ធ\or ន%
-    \or ប\or ផ\or ព\or ភ\or ម%
-    \or យ\or រ\or ល\or វ\or ស%
-    \or ហ\or ឡ\or អ%
-    \else%
-    \@ctrerr% otherwise, counter error!
-    \fi}
-%TODO: translate captions to Khmer
-\def\thetheorem{\khmer{theorem}}
-\def\factname{ស្វ័យសត្យ}%
-\def\lemmaname{បទគន្លិះ}%
-\def\theoremname{ទ្រឹស្ដីបទ}%
-\def\corollaryname{អនុសាធ្យ}%
-\def\problemname{ចំណោទ}%
-\def\solutionname{ដំណោះស្រាយ}%
-\def\definitionname{និយមន័យ}%
-\def\examplename{ឧទាហរណ៏}%
-\uselanguage{khmer}%
-\languagepath{khmer}%
-\deftranslation[to=khmer]{Fact}{\factname}%
-\deftranslation[to=khmer]{Lemma}{\lemmaname}%
-\deftranslation[to=khmer]{Theorem}{\theoremname}%
-\deftranslation[to=khmer]{Corollary}{\corollaryname}%
-\deftranslation[to=khmer]{Problem}{\problemname}%
-\deftranslation[to=khmer]{Solution}{\solutionname}%
-\deftranslation[to=khmer]{Definition}{\definitionname}%
-\deftranslation[to=khmer]{Definitions}{\definitionname}%
-\deftranslation[to=khmer]{Example}{\examplename}%
-\deftranslation[to=khmer]{Examples}{\examplename}%
-%TODO: try to add 2 more key to `enumerate' called [m] and [k]
-\def\@enloop@{%
-    \ifx A\@entemp \def\@tempa{\@enLabel\Alph  }\else
-    \ifx a\@entemp \def\@tempa{\@enLabel\alph  }\else
-    \ifx i\@entemp \def\@tempa{\@enLabel\roman }\else
-    \ifx I\@entemp \def\@tempa{\@enLabel\Roman }\else
-    \ifx 1\@entemp \def\@tempa{\@enLabel\arabic}\else
-    \ifx k\@entemp \def\@tempa{\@enLabel\alpkh }\else% added
-    \ifx m\@entemp \def\@tempa{\@enLabel\khmer }\else% added
-    \ifx \@sptoken\@entemp \let\@tempa\@enSpace \else
-    \ifx \bgroup\@entemp \let\@tempa\@enGroup \else
-    \ifx \@enum@\@entemp \let\@tempa\@gobble \else
-    \let\@tempa\@enOther
-    \@enhook
-    \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi% 2 \fi added
-    \@tempa}
-%
-\usetheme{default}
+\usefonttheme{khmeros}
+\usecolortheme{magenta}
 \useinnertheme{rounded}
 \useinnertheme{circles}
 \useoutertheme{infolines}
-\usecolortheme{seagull}
+%
+\ifbeamer@secheader\else\setbeamertemplate{headline}[default]\fi
+%
+\setbeamercovered{transparent}
+%
 \setbeamertemplate{theorems}[numbered]
 \setbeamertemplate{frametitle}[default][center]
-\setbeamerfont{frametitle}{family=\sffamily,size=\large}
-\setbeamerfont{title}{family=\sffamily,size=\large}
-\setbeamerfont{author}{family=\ttfamily,size=\large}
-\setbeamerfont{institute}{family=\ttfamily,size=\normalsize}
-\setbeamerfont{date}{family=\sffamily,size=\normalsize}
-\setbeamerfont{block title}{family=\ttfamily,size=\small}
+%
 \setlength{\leftmargini}{2.75ex}
 \setlength{\leftmarginii}{2.75ex}
 \setlength{\leftmarginiii}{2.75ex}
+%
+\addtobeamertemplate{frametitle}{
+    \def\insertframetitle{\thesection.~\insertsection}}{}
+\addtobeamertemplate{frametitle}{
+    \let\insertframesubtitle\insertsubsectionhead}{}
+\CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+\renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+%
+\AtBeginSection[] % Do nothing for \subsection*
+{
+    \begin{frame}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
 %
 \mode<all>
 \endinput
