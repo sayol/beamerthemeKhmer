@@ -1,0 +1,238 @@
+\mode<presentation>
+
+\setbeamerfont{normal text}{} % ignored currently
+\setbeamerfont{alerted text}{}
+\setbeamerfont{example text}{}
+
+\setbeamerfont{structure}{}
+\setbeamerfont{tiny structure}{size=\tiny}
+
+\setbeamerfont{title}{family=\sffamily,size=\large,parent=structure}
+\setbeamerfont{title in head/foot}{family=\sffamily}
+\setbeamerfont{title in sidebar}{size=\tiny}
+
+\setbeamerfont{subtitle}{size=\normalsize,parent=title}
+
+\setbeamerfont{author}{family=\sffamily,size=\large}
+\setbeamerfont{author in head/foot}{family=\sffamily}
+\setbeamerfont{author in sidebar}{size=\tiny}
+
+\setbeamerfont{institute}{family=\ttfamily,size=\normalsize}
+\setbeamerfont{institute in head/foot}{family=\sffamily}
+\setbeamerfont{institute in sidebar}{}
+
+\setbeamerfont{date}{family=\sffamily,size=\normalsize}
+\setbeamerfont{date in head/foot}{family=\sffamily}
+\setbeamerfont{date in sidebar}{}
+
+\setbeamerfont{page number in head/foot}{family=\sffamily}
+
+\setbeamerfont{part name}{size=\LARGE}
+\setbeamerfont{part title}{size=\LARGE,parent=title}
+
+\setbeamerfont{section name}{size=\Large}
+\setbeamerfont{section title}{size=\Large,parent=title}
+
+\setbeamerfont{section in toc}{family=\sffamily,parent=structure}
+\setbeamerfont{section in toc shaded}{family=\sffamily,parent=section in toc}
+\setbeamerfont{section in head/foot}{family=\sffamily}
+\setbeamerfont{section in sidebar}{size=\tiny}
+\setbeamerfont{section number projected}{family=\sffamily,size=\small,parent={section in toc,projected text}}
+
+\setbeamerfont{subsection name}{size=\large}
+\setbeamerfont{subsection title}{size=\large,parent=title}
+
+\setbeamerfont{subsection in toc}{}
+\setbeamerfont{subsection in toc shaded}{parent=subsection in toc}
+\setbeamerfont{subsection in head/foot}{family=\sffamily}
+\setbeamerfont{subsection in sidebar}{}
+
+\setbeamerfont{subsubsection in toc}{size=\footnotesize}
+\setbeamerfont{subsubsection in toc shaded}{parent=subsubsection in toc}
+\setbeamerfont{subsubsection in head/foot}{family=\sffamily}
+\setbeamerfont{subsubsection in sidebar}{}
+
+\setbeamerfont{headline}{parent={tiny structure}}
+\setbeamerfont{footline}{parent={tiny structure}}
+
+\setbeamerfont{sidebar}{size=\Tiny,parent={tiny structure}}
+\setbeamerfont{sidebar left}{parent=sidebar}
+\setbeamerfont{sidebar right}{parent=sidebar}
+
+\setbeamerfont{frametitle}{parent=structure,family=\sffamily,size=\large}
+\setbeamerfont{framesubtitle}{parent=frametitle,size=\footnotesize}
+
+\setbeamerfont{caption}{size=\small}
+\setbeamerfont{caption name}{parent={structure,caption}}
+
+\setbeamerfont{button}{size=\tiny}
+
+\setbeamerfont{block body}{}
+\setbeamerfont{block body alerted}{}
+\setbeamerfont{block body example}{}
+\setbeamerfont{block title}{family=\sffamily,size=\scriptsize,parent={structure,block body}}
+\setbeamerfont{block title alerted}{parent={block title,alerted text}}
+\setbeamerfont{block title example}{parent={block title,example text}}
+
+\setbeamerfont{item}{parent=structure}
+\setbeamerfont{subitem}{parent=item}
+\setbeamerfont{subsubitem}{parent=subitem}
+
+\setbeamerfont{item projected}{family=\sffamily,size=\scriptsize,parent={item,projected text}}
+\setbeamerfont{subitem projected}{parent=item projected}
+\setbeamerfont{subsubitem projected}{parent=subitem projected}
+
+\setbeamerfont{itemize item}{parent=item}
+\setbeamerfont{itemize subitem}{parent=subitem}
+\setbeamerfont{itemize subsubitem}{parent=subsubitem}
+
+\setbeamerfont{enumerate item}{parent=item}
+\setbeamerfont{enumerate subitem}{parent=subitem}
+\setbeamerfont{enumerate subsubitem}{parent=subsubitem}
+
+\setbeamerfont{itemize/enumerate body}{}
+\setbeamerfont{itemize/enumerate subbody}{size=\small}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\footnotesize}
+
+\setbeamerfont{description item}{parent=item}
+
+\setbeamerfont{description body}{}
+
+\setbeamerfont{projected text}{parent={tiny structure}}
+
+\setbeamerfont{abstract}{size=\small}
+\setbeamerfont{abstract title}{parent={abstract,structure},size=\normalsize}
+
+\setbeamerfont{verse}{family=\rmfamily,shape=\itshape}
+
+\setbeamerfont{quotation}{shape=\itshape}
+\setbeamerfont{quote}{parent=quotation}
+
+\setbeamerfont{note page}{size=\small}
+\setbeamerfont{note title}{parent=note page}
+\setbeamerfont{note date}{size=\footnotesize}
+
+\mode<all>
+%TODO: Khmer (Cambodian)
+\RequirePackage[no-math]{fontspec}% no math font
+\setmainfont{Khmer OS System}% roman font
+\setsansfont{Khmer OS Muol Light}% sans serif font
+\setmonofont{Khmer OS Bokor}% typewriter font
+\XeTeXlinebreaklocale "khm"% line break rule
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.5pt% line break skip
+%TODO: translate captions to Khmer
+\def\factname{ស្វ័យសត្យ}%
+\def\lemmaname{បទគន្លិះ}%
+\def\theoremname{ទ្រឹស្ដីបទ}%
+\def\corollaryname{អនុសាធ្យ}%
+\def\problemname{ចំណោទ}%
+\def\solutionname{ដំណោះស្រាយ}%
+\def\definitionname{និយមន័យ}%
+\def\examplename{ឧទាហរណ៏}%
+\uselanguage{khmer}%
+\languagepath{khmer}%
+\deftranslation[to=khmer]{Fact}{\factname}%
+\deftranslation[to=khmer]{Lemma}{\lemmaname}%
+\deftranslation[to=khmer]{Theorem}{\theoremname}%
+\deftranslation[to=khmer]{Corollary}{\corollaryname}%
+\deftranslation[to=khmer]{Problem}{\problemname}%
+\deftranslation[to=khmer]{Solution}{\solutionname}%
+\deftranslation[to=khmer]{Definition}{\definitionname}%
+\deftranslation[to=khmer]{Definitions}{\definitionname}%
+\deftranslation[to=khmer]{Example}{\examplename}%
+\deftranslation[to=khmer]{Examples}{\examplename}%
+%TODO: khmer counter
+\def\thesection{\khmer{section}}
+\def\thetheorem{\khmer{theorem}}
+%TODO: try to add 2 more key to `enumerate' called [m] and [k]
+\def\@enloop@{%
+    \ifx A\@entemp \def\@tempa{\@enLabel\Alph  }\else
+    \ifx a\@entemp \def\@tempa{\@enLabel\alph  }\else
+    \ifx i\@entemp \def\@tempa{\@enLabel\roman }\else
+    \ifx I\@entemp \def\@tempa{\@enLabel\Roman }\else
+    \ifx 1\@entemp \def\@tempa{\@enLabel\arabic}\else
+    \ifx k\@entemp \def\@tempa{\@enLabel\alpkh }\else% added
+    \ifx m\@entemp \def\@tempa{\@enLabel\khmer }\else% added
+    \ifx \@sptoken\@entemp \let\@tempa\@enSpace \else
+    \ifx \bgroup\@entemp \let\@tempa\@enGroup \else
+    \ifx \@enum@\@entemp \let\@tempa\@gobble \else
+    \let\@tempa\@enOther
+    \@enhook
+    \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi% 2 \fi added
+    \@tempa}
+%
+\RequirePackage{expl3}
+%todo: Define Khmer Numbers
+\ExplSyntaxOn
+\cs_new:Npn \khmer #1 {
+    \exp_after:wN \int_to_khmer:n \cs:w c@#1 \cs_end:
+}
+\cs_new:Npn \int_to_khmer:n #1 {
+    \exp_after:wN \_int_to_khmer:n \__int_value:w #1 \q_nil
+}
+\cs_new:Npn \_int_to_khmer:n #1 {
+    \if_meaning:w #1 \q_nil
+    \else:%
+    \if_case:w #1
+    ០ \or: ១ \or: ២ \or: ៣ \or: ៤ \or: ៥ \or: ៦ \or: ៧ \or: ៨ \or: ៩
+    \fi:%
+    \exp_after:wN \_int_to_khmer:n
+    \fi:
+}
+\tex_let:D \@khmer \int_to_khmer:n
+\cs_new:Npn \khmernumeral #1 { \_int_to_khmer:n #1 \q_nil }
+%todo: Define Khmer Alphabets
+\cs_new:Npn \alpkh #1 {
+    \exp_after:wN \int_to_khmer_alph:n \cs:w c@#1\cs_end:
+}
+\cs_new:Npn \int_to_khmer_alph:n #1{
+    \int_to_symbols:nnn { #1 }{ 33 }{
+        {1}{ក} {2}{ខ} {3}{គ} {4}{ឃ} {5}{ង} 
+        {6}{ច} {7}{ឆ} {8}{ជ} {9}{ឈ} {10}{ញ} 
+        {11}{ដ} {12}{ឋ} {13}{ឌ} {14}{ឍ} {15}{ណ} 
+        {16}{ត} {17}{ថ} {18}{ទ} {19}{ធ} {20}{ន} 
+        {21}{ប} {22}{ផ} {23}{ព} {24}{ភ} {25}{ម} 
+        {26}{យ} {27}{រ} {28}{ល} {29}{វ} {30}{ស} 
+        {31}{ហ} {32}{ឡ} {33}{អ}
+    }
+}
+%
+\tex_let:D \@alpkh \int_to_khmer_alph:n
+\tex_let:D \@Alpkh \int_to_khmer_alph:n
+%todo: Define Khmer Short Date dd/mm/yyyy
+\tl_new:N \l_khmer_short_date_tl
+\tl_set:Nn \l_khmer_short_date_tl {%
+    \if_int_compare:w \c_sys_day_int < 10
+    \int_to_khmer:n { 0\c_sys_day_int }
+    \else:
+    \int_to_khmer:n \c_sys_day_int
+    \fi:
+    /
+    \if_int_compare:w \c_sys_month_int < 10
+    \int_to_khmer:n { 0\c_sys_month_int }
+    \else:
+    \int_to_khmer:n \c_sys_month_int
+    \fi:%
+    /
+    \int_to_khmer:n \c_sys_year_int
+}
+\tex_let:D \khmershortdate \l_khmer_short_date_tl
+%todo: Define Khmer Date dd~month~yyyy
+\tl_new:N \l_khmer_date_tl
+\tl_set:Nn \l_khmer_date_tl {%
+    ថ្ងៃទី~
+    \if_int_compare:w \c_sys_day_int < 10
+    \int_to_khmer:n { 0\c_sys_day_int }
+    \else:
+    \int_to_khmer:n \c_sys_day_int
+    \fi:{}~
+    ខែ~
+    \if_case:w \c_sys_month_int
+    \or: មករា \or: កុម្ភៈ\or: មិនា\or: មេសា\or: ឧសភា\or: មិថុនា\or: កក្កដា\or: សីហា\or: កញ្ញា\or: តុលា\or: វិច្ឆិកា\or: ធ្នូ
+    \fi:{}~
+    ឆ្នាំ~
+    \int_to_khmer:n \c_sys_year_int
+}
+\tex_let:D \khmerdate \l_khmer_date_tl
+\ExplSyntaxOff
+%
