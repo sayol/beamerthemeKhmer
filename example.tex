@@ -1,10 +1,10 @@
-\documentclass[12pt,serif]{beamer}
+\documentclass[11pt,serif]{beamer}
 \usetheme{Khmer}
+\title[\LaTeX]{ភាសា \LaTeX}
+\author[សាយ]{អូល~សាយ}
+\institute[វ.គ.ភ]{វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ}
+\date[០២/២៣/២០]{២៣ កុម្ភៈ ២០២០}
 \begin{document}
-    \title[\LaTeX]{ភាសា \LaTeX}
-    \author[សាយ]{អូល~សាយ}
-    \institute[វ.គ.ភ]{វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ}
-    \date[០២/២៣/២០]{២៣ កុម្ភៈ ២០២០}
     \section{ស្វាគមន៍}
     \begin{frame}{ស្វាគមន៍}
         \titlepage
@@ -45,7 +45,7 @@
     \end{frame}
     \begin{frame}{លាយបញ្ចូលគ្នា}
         \begin{example}
-            \begin{enumerate}[I]
+            \begin{enumerate}[<+-|alert@+>][I]
                 \item ជាន់ទីមួយ
                 \begin{enumerate}[1]
                     \item ជាន់ទីពីរ
@@ -59,4 +59,14 @@
             \end{enumerate}
         \end{example}
     \end{frame}
+\section{ឯកសារយោង}
+\begin{frame}
+    \begin{thebibliography}{4}
+        \bibitem[till,2013]{till13} Till, Beamer User Guide, 2013
+        \setbeamertemplate{bibliography item}[book]
+        \bibitem[knuth,1986]{knuth86} Knuth, The TeXbook, 1986
+        \setbeamertemplate{bibliography item}[online]
+        \bibitem[wikibook,2020]{wikibook20} wikibook, \url{www.wikibook.com/latex/}, 2020
+    \end{thebibliography}
+\end{frame}
 \end{document}
