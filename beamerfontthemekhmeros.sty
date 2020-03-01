@@ -1,5 +1,8 @@
 \mode<presentation>
 
+\usefonttheme{professionalfonts}
+\RequirePackage{newpxmath}
+
 \setbeamerfont{normal text}{} % ignored currently
 \setbeamerfont{alerted text}{}
 \setbeamerfont{example text}{}
@@ -120,30 +123,6 @@
 \setmonofont{Khmer OS Bokor}% typewriter font
 \XeTeXlinebreaklocale "khm"% line break rule
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.5pt% line break skip
-%TODO: translate captions to Khmer
-\def\factname{ស្វ័យសត្យ}%
-\def\lemmaname{បទគន្លិះ}%
-\def\theoremname{ទ្រឹស្ដីបទ}%
-\def\corollaryname{អនុសាធ្យ}%
-\def\problemname{ចំណោទ}%
-\def\solutionname{ដំណោះស្រាយ}%
-\def\definitionname{និយមន័យ}%
-\def\examplename{ឧទាហរណ៏}%
-\uselanguage{khmer}%
-\languagepath{khmer}%
-\deftranslation[to=khmer]{Fact}{\factname}%
-\deftranslation[to=khmer]{Lemma}{\lemmaname}%
-\deftranslation[to=khmer]{Theorem}{\theoremname}%
-\deftranslation[to=khmer]{Corollary}{\corollaryname}%
-\deftranslation[to=khmer]{Problem}{\problemname}%
-\deftranslation[to=khmer]{Solution}{\solutionname}%
-\deftranslation[to=khmer]{Definition}{\definitionname}%
-\deftranslation[to=khmer]{Definitions}{\definitionname}%
-\deftranslation[to=khmer]{Example}{\examplename}%
-\deftranslation[to=khmer]{Examples}{\examplename}%
-%TODO: khmer counter
-\def\thesection{\khmer{section}}
-\def\thetheorem{\khmer{theorem}}
 %TODO: try to add 2 more key to `enumerate' called [m] and [k]
 \def\@enloop@{%
     \ifx A\@entemp \def\@tempa{\@enLabel\Alph  }\else
@@ -164,7 +143,7 @@
 \RequirePackage{expl3}
 %todo: Define Khmer Numbers
 \ExplSyntaxOn
-\cs_new:Npn \khmer #1 {
+\cs_new:Npn \l_khmer_counter:n #1 {
     \exp_after:wN \int_to_khmer:n \cs:w c@#1 \cs_end:
 }
 \cs_new:Npn \int_to_khmer:n #1 {
@@ -180,7 +159,9 @@
     \fi:
 }
 \tex_let:D \@khmer \int_to_khmer:n
-\cs_new:Npn \khmernumeral #1 { \_int_to_khmer:n #1 \q_nil }
+\tex_let:D \khmer \l_khmer_counter:n
+\cs_new:Npn \l_khmer_numeral:n #1 { \_int_to_khmer:n #1 \q_nil }
+\tex_let:D \khmernumeral \l_khmer_numeral:n
 %todo: Define Khmer Alphabets
 \cs_new:Npn \alpkh #1 {
     \exp_after:wN \int_to_khmer_alph:n \cs:w c@#1\cs_end:
@@ -217,22 +198,95 @@
     \int_to_khmer:n \c_sys_year_int
 }
 \tex_let:D \khmershortdate \l_khmer_short_date_tl
-%todo: Define Khmer Date dd~month~yyyy
+%TODO: Translate day, month and year labels to Khmer language
+\tl_new:N \l_khmer_day_label_tl
+\tl_set:Nn \l_khmer_day_label_tl { ថ្ងៃទី }
+\tl_new:N \l_khmer_month_label_tl
+\tl_set:Nn \l_khmer_month_label_tl { ខែ }
+\tl_new:N \l_khmer_year_label_tl
+\tl_set:Nn \l_khmer_year_label_tl { ឆ្នាំ }
+%TODO: Translate the twelve months to Khmer language
+\tl_new:N \l_january_in_khmer_tl
+\tl_set:Nn \l_january_in_khmer_tl { មករា }
+\tl_new:N \l_february_in_khmer_tl
+\tl_set:Nn \l_february_in_khmer_tl { កុម្ភៈ }
+\tl_new:N \l_march_in_khmer_tl
+\tl_set:Nn \l_march_in_khmer_tl { មីនា }
+\tl_new:N \l_april_in_khmer_tl
+\tl_set:Nn \l_april_in_khmer_tl { មេសា }
+\tl_new:N \l_may_in_khmer_tl
+\tl_set:Nn \l_may_in_khmer_tl { ឧសភា }
+\tl_new:N \l_june_in_khmer_tl
+\tl_set:Nn \l_june_in_khmer_tl { មិថុនា }
+\tl_new:N \l_july_in_khmer_tl
+\tl_set:Nn \l_july_in_khmer_tl { កក្កដា }
+\tl_new:N \l_august_in_khmer_tl
+\tl_set:Nn \l_august_in_khmer_tl { សីហា }
+\tl_new:N \l_september_in_khmer_tl
+\tl_set:Nn \l_september_in_khmer_tl { កញ្ញា }
+\tl_new:N \l_october_in_khmer_tl
+\tl_set:Nn \l_october_in_khmer_tl { តុលា }
+\tl_new:N \l_november_in_khmer_tl
+\tl_set:Nn \l_november_in_khmer_tl { វិច្ឆិកា }
+\tl_new:N \l_december_in_khmer_tl
+\tl_set:Nn \l_december_in_khmer_tl { ធ្នូ }
+%TODO: Define Khmer Date dd~month~yyyy
 \tl_new:N \l_khmer_date_tl
 \tl_set:Nn \l_khmer_date_tl {%
-    ថ្ងៃទី~
+    \l_khmer_day_label_tl~
     \if_int_compare:w \c_sys_day_int < 10
     \int_to_khmer:n { 0\c_sys_day_int }
     \else:
     \int_to_khmer:n \c_sys_day_int
     \fi:{}~
-    ខែ~
+    \l_khmer_month_label_tl~
     \if_case:w \c_sys_month_int
-    \or: មករា \or: កុម្ភៈ\or: មិនា\or: មេសា\or: ឧសភា\or: មិថុនា\or: កក្កដា\or: សីហា\or: កញ្ញា\or: តុលា\or: វិច្ឆិកា\or: ធ្នូ
+    \or: \l_january_in_khmer_tl \or: \l_february_in_khmer_tl\or: \l_march_in_khmer_tl\or: \l_april_in_khmer_tl\or: \l_may_in_khmer_tl\or: \l_june_in_khmer_tl\or: \l_july_in_khmer_tl\or: \l_august_in_khmer_tl\or: \l_september_in_khmer_tl\or: \l_october_in_khmer_tl\or: \l_november_in_khmer_tl\or: \l_december_in_khmer_tl
     \fi:{}~
-    ឆ្នាំ~
+    \l_khmer_year_label_tl~
     \int_to_khmer:n \c_sys_year_int
 }
 \tex_let:D \khmerdate \l_khmer_date_tl
+%TODO: khmer counter
+\tl_new:N \l_section_counter:n
+\tl_set:Nn \l_section_counter:n { \l_khmer_counter:n { section } }
+\tex_let:D \thesection \l_section_counter:n
+\tl_new:N \l_theorem_counter:n
+\tl_set:Nn \l_theorem_counter:n { \l_khmer_counter:n { theorem } }
+\tex_let:D \thetheorem \l_theorem_counter:n
+%TODO: translate captions to Khmer
+\tl_new:N \l_fact_name_tl
+\tl_set:Nn \l_fact_name_tl { ស្វ័យសត្យ }
+\tl_new:N \l_lemma_name_tl
+\tl_set:Nn \l_lemma_name_tl { បទគន្លិះ }
+\tl_new:N \l_theorem_name_tl
+\tl_set:Nn \l_theorem_name_tl { ទ្រឹស្ដីបទ }
+\tl_new:N \l_corollary_name_tl
+\tl_set:Nn \l_corollary_name_tl { អនុសាធ្យ }
+\tl_new:N \l_problem_name_tl
+\tl_set:Nn \l_problem_name_tl { ចំណោទ }
+\tl_new:N \l_solution_name_tl
+\tl_set:Nn \l_solution_name_tl { ដំណោះស្រាយ }
+\tl_new:N \l_definition_name_tl
+\tl_set:Nn \l_definition_name_tl { និយមន័យ }
+\tl_new:N \l_example_name_tl
+\tl_set:Nn \l_example_name_tl { ឧទាហរណ៏ }
+\tl_new:N \l_proof_name_tl
+\tl_set:Nn \l_proof_name_tl { សម្រាយបញ្ជាក់ }
+\tex_let:D \proofname \l_proof_name_tl
+\uselanguage{khmer}%
+\languagepath{khmer}%
+\cs_new:Nn \l_translate_to_khmer:nn { \deftranslation[to=khmer]{ #1 }{ #2 } }
+\l_translate_to_khmer:nn { Fact }{ \l_fact_name_tl }%
+\l_translate_to_khmer:nn { Lemma }{ \l_lemma_name_tl }%
+\l_translate_to_khmer:nn { Theorem }{ \l_theorem_name_tl }%
+\l_translate_to_khmer:nn { Corollary }{ \l_corollary_name_tl }%
+\l_translate_to_khmer:nn { Problem }{ \l_problem_name_tl }%
+\l_translate_to_khmer:nn { Solution }{ \l_solution_name_tl }%
+\l_translate_to_khmer:nn { Definition }{ \l_definition_name_tl }%
+\l_translate_to_khmer:nn { Definitions }{ \l_definition_name_tl }%
+\l_translate_to_khmer:nn { Example }{ \l_example_name_tl }%
+\l_translate_to_khmer:nn { Examples }{ \l_example_name_tl }%
+\l_translate_to_khmer:nn { Proof }{ \l_proof_name_tl }%
 \ExplSyntaxOff
 %
