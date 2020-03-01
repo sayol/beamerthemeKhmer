@@ -3,14 +3,14 @@
 \title[\LaTeX]{ភាសា \LaTeX}
 \author[សាយ]{អូល~សាយ}
 \institute[វ.គ.ភ]{វិទ្យាស្ថានគរុកោសល្យរាជធានីភ្នំពេញ}
-\date[០២/២៣/២០]{២៣ កុម្ភៈ ២០២០}
+\date[\khmershortdate]{\khmerdate}
 \begin{document}
     \section{ស្វាគមន៍}
-    \begin{frame}{ស្វាគមន៍}
+    \begin{frame}
         \titlepage
     \end{frame}
     \section{លេខ និងអក្សរខ្មែរ}
-    \begin{frame}{លេខ និងអក្សរខ្មែរ}
+    \begin{frame}
         \begin{definition}
             \begin{enumerate}[m]
                 \item ជាន់ទីមួយ
@@ -27,7 +27,7 @@
         \end{definition}
     \end{frame}
     \section{លាយបញ្ចូលគ្នា}
-    \begin{frame}{លាយបញ្ចូលគ្នា}
+    \begin{frame}
         \begin{theorem}
             \begin{enumerate}[A]
             \item ជាន់ទីមួយ
@@ -43,7 +43,7 @@
         \end{enumerate}
         \end{theorem}
     \end{frame}
-    \begin{frame}{លាយបញ្ចូលគ្នា}
+    \begin{frame}
         \begin{example}
             \begin{enumerate}[<+-|alert@+>][I]
                 \item ជាន់ទីមួយ
@@ -59,15 +59,30 @@
             \end{enumerate}
         \end{example}
     \end{frame}
+\section{បរិស្ថានផ្សេងៗ}
+\begin{frame}
+    \begin{problem}
+        គណនាផលបូកស៊េរី $ \sum_{n=1}^{\infty} \frac{1}{n(n+1)} $~។
+    \end{problem}
+    \begin{proof}
+        ចំពោះគ្រប់ $ n\in\mathbb{N} $ គេបាន $ \frac{1}{n(n+1)}=\frac{1}{n}-\frac{1}{n+1} $ នាំឱ្យ
+        \begin{align*}
+        \sum_{n=1}^{\infty} \frac{1}{n(n+1)}
+        &=\lim\limits_{n\to \infty} \sum_{k=1}^{n} \left( \frac{1}{k}-\frac{1}{k+1} \right)\\
+        &=\lim\limits_{n\to \infty} \left( 1-\frac{1}{n+1} \right)\\
+        &=1
+        \end{align*}
+    \end{proof}
+\end{frame}
 \section{ឯកសារយោង}
 \begin{frame}
     \begin{thebibliography}{4}
-        \bibitem[till,2013]{till13} Till, The beamer class,
+        \bibitem[tau,2018]{tau13} Tau, The beamer class,
         \newblock User Guide for version 3.55.
         \setbeamertemplate{bibliography item}[book]
         \bibitem[knuth,1986]{knuth86} Knuth, The TeXbook, 1986
         \setbeamertemplate{bibliography item}[online]
-        \bibitem[wikibook,2020]{wikibook20} wikibook, \url{www.wikibook.com/latex/}
+        \bibitem[wikibook]{wikibook} wikibook, \url{www.wikibook.com/latex/}
     \end{thebibliography}
 \end{frame}
 \end{document}
