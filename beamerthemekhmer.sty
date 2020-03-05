@@ -1,4 +1,4 @@
-\ProvidesPackage{beamerthemeKhmer}
+%\ProvidesPackage{beamerthemeKhmer}
 \mode<presentation>
 \hypersetup{pdfpagemode=FullScreen}
 %
@@ -11,7 +11,7 @@
 \usefonttheme{khmeros}
 \usecolortheme{magenta}
 \useinnertheme{rounded}
-\useinnertheme{circles}
+\useinnertheme{circle}
 \useoutertheme{infolines}
 %
 \ifbeamer@secheader\else\setbeamertemplate{headline}[default]\fi
@@ -24,6 +24,12 @@
 \setlength{\leftmargini}{2.75ex}
 \setlength{\leftmarginii}{2.75ex}
 \setlength{\leftmarginiii}{2.75ex}
+\AtBeginDocument{%
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    \setlength{\abovedisplayshortskip}{0pt}
+    \setlength{\belowdisplayshortskip}{0pt}
+}
 %
 \addtobeamertemplate{frametitle}{
     \def\insertframetitle{\thesection.~\insertsection}}{}
@@ -31,22 +37,6 @@
     \let\insertframesubtitle\insertsubsectionhead}{}
 \CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup\beamer@inlineframetitle{}}
 \renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
-%
-\defbeamertemplate{section in toc}{section numbered khmer}{%
-    \leavevmode\leftskip=2ex%
-    \llap{%
-        \usebeamerfont*{section number projected}%
-        \usebeamercolor{section number projected}%
-        \begin{pgfpicture}{-1ex}{0ex}{1ex}{2ex}
-            \color{bg}
-            \pgfpathcircle{\pgfpoint{0pt}{1.025ex}}{1.2ex}
-            \pgfusepath{fill}
-            \pgftext[base,y=.325ex]{%
-                \color{fg}\khmernumeral\inserttocsectionnumber}
-        \end{pgfpicture}\kern1.25ex%
-    }%
-    \inserttocsection\par}
-\setbeamertemplate{section in toc}[section numbered khmer]
 %
 \AtBeginSection[] % Do nothing for \section*
 {
@@ -56,4 +46,4 @@
 }
 %
 \mode<all>
-\endinput
+%\endinput
