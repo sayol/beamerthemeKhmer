@@ -1,0 +1,98 @@
+\mode<presentation>
+% (sub-)section in toc: circle
+
+\defbeamertemplate{section in toc}{khmer circle}
+{\leavevmode\leftskip=2ex%
+  \llap{%
+    \usebeamerfont*{section number projected}%
+    \usebeamercolor{section number projected}%
+    \begin{pgfpicture}{-1ex}{0ex}{1ex}{2ex}
+      \color{bg}
+      \pgfpathcircle{\pgfpoint{0pt}{1ex}}{1.2ex}
+      \pgfusepath{fill}
+      \pgftext[base,y=.25ex]{\color{fg}\inserttocsectionnumber}
+    \end{pgfpicture}\kern1.25ex%
+  }%
+  \inserttocsection\par}
+
+\defbeamertemplate{subsection in toc}{khmer circle}
+{\leavevmode\leftskip=2em\inserttocsubsection\par}
+
+\defbeamertemplate{subsubsection in toc}{khmer circle}
+{\leavevmode\normalsize\usebeamerfont{subsection in
+    toc}\leftskip=3em\usebeamerfont{subsubsection in toc}%
+  \inserttocsubsubsection\par}
+% Itemize items, circle
+
+\defbeamertemplate{itemize item}{khmer circle}{\usebeamerfont*{itemize item}\raise1.25pt\hbox{\donotcoloroutermaths$\bullet$}}
+\defbeamertemplate{itemize subitem}{khmer circle}{\usebeamerfont*{itemize subitem}\raise1.5pt\hbox{\donotcoloroutermaths$\bullet$}}
+\defbeamertemplate{itemize subsubitem}{khmer circle}{\usebeamerfont*{itemize subsubitem}\raise1.5pt\hbox{\donotcoloroutermaths$\bullet$}}
+% Enumerate items, circle
+
+\defbeamertemplate{enumerate item}{khmer circle}
+{
+    \usebeamerfont*{item projected}%
+    \usebeamercolor[bg]{item projected}%
+    \begin{pgfpicture}{-1ex}{0ex}{1ex}{2ex}
+        \pgfpathcircle{\pgfpoint{0pt}{1ex}}{1.2ex}
+        \pgfusepath{fill}
+        \pgftext[base,y=.25ex]{\color{fg}\insertenumlabel}
+    \end{pgfpicture}%
+}
+[action]
+{\setbeamerfont{item projected}{size=\scriptsize}}
+
+\defbeamertemplate{enumerate subitem}{khmer circle}
+{
+    \usebeamerfont*{subitem projected}%
+    \usebeamercolor[bg]{subitem projected}%
+    \begin{pgfpicture}{-1ex}{0ex}{1ex}{2ex}
+        \pgfpathcircle{\pgfpoint{0pt}{1ex}}{1.2ex}
+        \pgfusepath{fill}
+        \pgftext[base,y=.25ex]{\color{fg}\insertsubenumlabel}
+    \end{pgfpicture}%
+}
+
+\defbeamertemplate{enumerate subsubitem}{khmer circle}
+{
+    \usebeamerfont*{subsubitem projected}%
+    \usebeamercolor[bg]{subsubitem projected}%
+    \begin{pgfpicture}{-1ex}{0ex}{1ex}{2ex}
+        \pgfpathcircle{\pgfpoint{0pt}{1ex}}{1.2ex}
+        \pgfusepath{fill}
+        \pgftext[base,y=.25ex]{\color{fg}\insertsubsubenumlabel}
+    \end{pgfpicture}%
+}
+
+\defbeamertemplate{enumerate mini template}{khmer circle}
+{
+    \usebeamerfont*{\beameritemnestingprefix item projected}%
+    \usebeamercolor[bg]{\beameritemnestingprefix item projected}%
+    \begin{pgfpicture}{-1ex}{0ex}{1ex}{2ex}
+        \pgfpathcircle{\pgfpoint{0pt}{1ex}}{1.2ex}
+        \pgfusepath{fill}
+        \pgftext[base,y=.25ex]{\color{fg}\insertenumlabel}
+    \end{pgfpicture}%
+}
+
+\defbeamertemplate{section in toc}{section numbered circle}{%
+    \leavevmode\leftskip=2ex%
+    \llap{%
+        \usebeamerfont*{section number projected}%
+        \usebeamercolor{section number projected}%
+        \begin{pgfpicture}{-1ex}{0ex}{1ex}{2ex}
+            \color{bg}
+            \pgfpathcircle{\pgfpoint{0pt}{1ex}}{1.2ex}
+            \pgfusepath{fill}
+            \pgftext[base,y=.25ex]{%
+                \color{fg}\khmernumeral\inserttocsectionnumber}
+        \end{pgfpicture}\kern1.25ex%
+    }%
+    \inserttocsection\par}
+
+%TODO: set template
+\setbeamertemplate{items}[khmer circle]
+\setbeamertemplate{sections/subsections in toc}[khmer circle]
+\setbeamertemplate{section in toc}[section numbered circle]
+
+\mode<all>
