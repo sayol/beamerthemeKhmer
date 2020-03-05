@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.5.22)  1 MAR 2020 19:15
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.5.22)  3 MAR 2020 14:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -538,7 +538,7 @@ Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
 (c:/texlive/2019/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
 \beamer@sbttoks=\toks30
 
-(./beamerbaseauxtemplates.sty
+(c:/texlive/2019/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty
 (c:/texlive/2019/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
 \bmb@box=\box48
 \bmb@colorbox=\box49
@@ -647,9 +647,7 @@ Package: amsthm 2017/10/31 v2.20.4
 \beamer@dimb=\dimen186
 )
 (c:/texlive/2019/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty)))
-(./beamerthemekhmer.sty
-Package: beamerthemeKhmer 
- (./beamerfontthemekhmeros.sty
+(./beamerthemeKhmer.sty (./beamerfontthemekhmeros.sty
 (c:/texlive/2019/texmf-dist/tex/latex/beamer/beamerfontthemeprofessionalfonts.s
 ty) (c:/texlive/2019/texmf-dist/tex/latex/newpx/newpxmath.sty
 Package: newpxmath 2018/11/22 v1.33
@@ -1064,7 +1062,7 @@ LaTeX Info: Redefining \ttfamily on input line 124.
 )
 (./beamercolorthememagenta.sty)
 (c:/texlive/2019/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty)
-(c:/texlive/2019/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.sty)
+(./beamerinnerthemecircle.sty)
 (c:/texlive/2019/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty))
 (./example.aux)
 \openout1 = `example.aux'.
@@ -1298,10 +1296,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 32891 strings out of 492922
- 651499 string characters out of 6136751
- 739628 words of memory out of 5000000
- 36409 multiletter control sequences out of 15000+600000
+ 32900 strings out of 492922
+ 651942 string characters out of 6136751
+ 740946 words of memory out of 5000000
+ 36419 multiletter control sequences out of 15000+600000
  583260 words of font info for 131 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,19n,87p,790b,1658s stack positions out of 5000i,500n,10000p,200000b,80000s
