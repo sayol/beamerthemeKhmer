@@ -1,0 +1,56 @@
+\mode<presentation>
+%TODO: Main color
+\colorlet{khmer}{magenta}
+\setbeamercolor{author}{fg=khmer}
+\setbeamercolor{institute}{fg=khmer}
+\setbeamercolor{date}{fg=khmer}
+%TODO: Change math style to display style with blue color
+\everymath={\expandafter\color{khmer!67!black}\displaystyle}
+%TODO: Text color
+\setbeamercolor*{normal text}{fg=black,bg=white}
+\setbeamercolor*{alerted text}{fg=blue}
+\setbeamercolor*{example text}{fg=black}
+\setbeamercolor*{structure}{fg=khmer}
+
+\providecommand*{\beamer@bftext@only}{%
+  \relax
+  \ifmmode
+    \expandafter\beamer@bftext@warning
+  \else
+    \expandafter\bfseries
+  \fi
+}
+\providecommand*{\beamer@bftext@warning}{%
+  \ClassWarning{beamer}
+    {Cannot use bold for alerted text in math mode}%
+}
+
+\setbeamerfont{alerted text}{series=\beamer@bftext@only}
+
+\setbeamercolor*{palette primary}{fg=white,bg=khmer!60}
+\setbeamercolor*{palette secondary}{fg=white,bg=khmer!80}
+\setbeamercolor*{palette tertiary}{fg=white,bg=khmer}
+\setbeamercolor*{palette quaternary}{fg=white,bg=red}
+
+\setbeamercolor{sidebar}{bg=khmer!20}
+
+\setbeamercolor*{palette sidebar primary}{fg=khmer}
+\setbeamercolor*{palette sidebar secondary}{fg=khmer}
+\setbeamercolor*{palette sidebar tertiary}{fg=khmer}
+\setbeamercolor*{palette sidebar quaternary}{fg=khmer}
+
+\setbeamercolor*{item projected}{fg=white,bg=khmer}
+
+\setbeamercolor*{titlelike}{parent=palette secondary}
+\setbeamercolor*{block title}{fg=white,bg=khmer}
+\setbeamercolor*{block title alerted}{fg=white,bg=khmer}
+\setbeamercolor*{block title example}{fg=white,bg=khmer}
+
+\setbeamercolor*{block body}{fg=black,bg=khmer!20}
+\setbeamercolor*{block body alerted}{fg=blue,bg=khmer!20}
+\setbeamercolor*{block body example}{fg=black,bg=khmer!20}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+\mode<all>
