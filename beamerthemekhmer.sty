@@ -8,11 +8,11 @@
 \DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
 \ProcessOptionsBeamer
 %
-\usefonttheme{khmeros}
-\usecolortheme{magenta}
-\useinnertheme{rounded}
-\useinnertheme{circle}
-\useoutertheme{infolines}
+\useinnertheme{rounded}% build-in theme
+\useoutertheme{infolines}% build-in theme
+\usefonttheme{khmer}% self-designed theme
+\usecolortheme{khmer}% modified theme
+\useinnertheme{circle}% modified theme
 %
 \ifbeamer@secheader\else\setbeamertemplate{headline}[default]\fi
 %
@@ -38,6 +38,10 @@
 \CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup\beamer@inlineframetitle{}}
 \renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
 %
+\AtBeginPart{%
+\beamer@tocsectionnumber=0\relax
+\setcounter{section}{0}
+\setcounter{theorem}{0}}
 \AtBeginSection[] % Do nothing for \section*
 {
     \begin{frame}
