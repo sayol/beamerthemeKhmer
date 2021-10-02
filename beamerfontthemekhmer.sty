@@ -147,7 +147,7 @@
     \exp_after:wN \int_to_khmer:n \cs:w c@#1 \cs_end:
 }
 \cs_new:Npn \int_to_khmer:n #1 {
-    \exp_after:wN \_int_to_khmer:n \__int_value:w #1 \q_nil
+    \exp_after:wN \_int_to_khmer:n \int_value:w #1 \q_nil
 }
 \cs_new:Npn \_int_to_khmer:n #1 {
     \if_meaning:w #1 \q_nil
