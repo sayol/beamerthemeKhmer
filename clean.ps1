@@ -1,0 +1,16 @@
+Remove-Item *.aux
+Remove-Item *.log
+Remove-Item *.out
+Remove-Item *.synctex.gz
+Remove-Item *.nav
+Remove-Item *.snm
+Remove-Item *.toc
+Remove-Item *.vrb
+Remove-Item *.fdb_latexmk
+Remove-Item *.fls
+Remove-Item *.bbl
+Remove-Item *.blg
+Remove-Item *.ptc
+Remove-Item *.lot
+Remove-Item *.lol
+Remove-Item *.lof

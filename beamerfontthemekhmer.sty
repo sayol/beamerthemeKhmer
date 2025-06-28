@@ -1,8 +1,10 @@
 \mode<presentation>
 
+% ប្ដូរពុម្ភអក្សរគណិតវិទ្យា
 \usefonttheme{professionalfonts}
 \RequirePackage{newpxmath}
 
+% ផ្លាស់ប្ដូរពុម្ភអក្សរនៅផ្នែកផ្សេងៗទៀតនៃផ្ទាំងបង្ហាញ
 \setbeamerfont{normal text}{} % ignored currently
 \setbeamerfont{alerted text}{}
 \setbeamerfont{example text}{}
@@ -116,13 +118,17 @@
 \setbeamerfont{note date}{size=\footnotesize}
 
 \mode<all>
+
+% កំណត់ភាសារខ្មែរ
 %TODO: Khmer (Cambodian)
 \RequirePackage[no-math]{fontspec}% no math font
 \setmainfont{Khmer OS System}% roman font
 \setsansfont{Khmer OS Muol Light}% sans serif font
 \setmonofont{Khmer OS Bokor}% typewriter font
-\XeTeXlinebreaklocale "khm"% line break rule
+\XeTeXlinebreaklocale "km"% line break rule
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.5pt% line break skip
+
+% បន្ថែមពាក្យគន្លឹះពីរបន្ថែមគឺ [m] (មួយ ពីរ ...) និង [k] (ក ខ ...) ទៅឱ្យបរិស្ថាន enumerate
 %TODO: try to add 2 more key to `enumerate' called [m] and [k]
 \def\@enloop@{%
     \ifx A\@entemp \def\@tempa{\@enLabel\Alph  }\else
@@ -140,6 +146,8 @@
     \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi% 2 \fi added
     \@tempa}
 %
+
+% បកប្រែទៅជាលេខខ្មែរ
 \RequirePackage{expl3}
 %todo: Define Khmer Numbers
 \ExplSyntaxOn
@@ -162,6 +170,8 @@
 \tex_let:D \khmer \l_khmer_counter:n
 \cs_new:Npn \l_khmer_numeral:n #1 { \_int_to_khmer:n #1 \q_nil }
 \tex_let:D \khmernumeral \l_khmer_numeral:n
+
+% បកប្រែទៅជាអក្ខរក្រមខ្មែរ
 %todo: Define Khmer Alphabets
 \cs_new:Npn \alpkh #1 {
     \exp_after:wN \int_to_khmer_alph:n \cs:w c@#1\cs_end:
@@ -180,6 +190,8 @@
 %
 \tex_let:D \@alpkh \int_to_khmer_alph:n
 \tex_let:D \@Alpkh \int_to_khmer_alph:n
+
+% បកប្រែទៅជាកាលបរិច្ឆេទខ្មែរ
 %todo: Define Khmer Short Date dd/mm/yyyy
 \tl_new:N \l_khmer_short_date_tl
 \tl_set:Nn \l_khmer_short_date_tl {%
@@ -198,6 +210,8 @@
     \int_to_khmer:n \c_sys_year_int
 }
 \tex_let:D \khmershortdate \l_khmer_short_date_tl
+
+% បកប្រែទៅជា ថ្ងៃ ខែ និងឆ្នាំ ជាភាសាខ្មែរ
 %TODO: Translate day, month and year labels to Khmer language
 \tl_new:N \l_khmer_day_label_tl
 \tl_set:Nn \l_khmer_day_label_tl { ថ្ងៃទី }
@@ -247,6 +261,8 @@
     \int_to_khmer:n \c_sys_year_int
 }
 \tex_let:D \khmerdate \l_khmer_date_tl
+
+% ប្ដូរលេខរៀង \section និង theorem ជាលេខខ្មែរ
 %TODO: khmer counter
 \tl_new:N \l_section_counter:n
 \tl_set:Nn \l_section_counter:n { \l_khmer_counter:n { section } }
@@ -254,6 +270,8 @@
 \tl_new:N \l_theorem_counter:n
 \tl_set:Nn \l_theorem_counter:n { \l_khmer_counter:n { theorem } }
 \tex_let:D \thetheorem \l_theorem_counter:n
+
+% បកប្រែចំណងជើងបរិស្ថានមានស្រាប់មួយចំនួនទៅជាភាសាខ្មែរ
 %TODO: translate captions to Khmer
 \tl_new:N \l_fact_name_tl
 \tl_set:Nn \l_fact_name_tl { ស្វ័យសត្យ }

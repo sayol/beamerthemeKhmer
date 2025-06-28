@@ -17,10 +17,12 @@
 \ifbeamer@secheader\else\setbeamertemplate{headline}[default]\fi
 %
 \setbeamercovered{transparent}
-%
+
+% ដាក់លេខរៀងទ្រឹស្ដីបទ និងបរិស្ថានស្រដៀងគ្នា
 \setbeamertemplate{theorems}[numbered]
 %\setbeamertemplate{frametitle}[default][left]%left,right,center
-%
+
+% ផ្លាស់ប្ដូរប្រវែងផ្សេងៗ
 \setlength{\leftmargini}{2.75ex}
 \setlength{\leftmarginii}{2.75ex}
 \setlength{\leftmarginiii}{2.75ex}
@@ -30,18 +32,22 @@
     \setlength{\abovedisplayshortskip}{0pt}
     \setlength{\belowdisplayshortskip}{0pt}
 }
-%
+
+% ថែមលេខរៀងចំណងជើង
 \addtobeamertemplate{frametitle}{
     \def\insertframetitle{\thesection.~\insertsection}}{}
 \addtobeamertemplate{frametitle}{
     \let\insertframesubtitle\insertsubsectionhead}{}
 \CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup\beamer@inlineframetitle{}}
 \renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
-%
+
+% ចាប់ផ្ដើមរាប់លេខរៀងសាដើមពេឡចូល \part ថ្មី
 \AtBeginPart{%
 \beamer@tocsectionnumber=0\relax
 \setcounter{section}{0}
 \setcounter{theorem}{0}}
+
+% ដាក់ផ្ទាំងមាតិការាល់មុនចូលផ្ទាំងថ្មី
 \AtBeginSection[] % Do nothing for \section*
 {
     \begin{frame}
